@@ -1,8 +1,16 @@
 export type UserId = string;
 
-interface User {
+export type User = {
   id: UserId;
   name: string;
-}
+};
 
-export default User;
+export const createUser = (id: UserId, name: string): User => ({
+  id,
+  name,
+});
+
+export const updateUserName = (user: User, name: string): User => ({
+  ...user,
+  name,
+});

@@ -1,9 +1,20 @@
 import { ChallengeId } from "./challenge";
 import { UserId } from "./user";
 
-interface Enrollment {
-  user: UserId;
-  challenge: ChallengeId;
-}
+export type EnrollmentId = string;
 
-export default Enrollment;
+export type Enrollment = {
+  id: EnrollmentId;
+  userId: UserId;
+  challengeId: ChallengeId;
+};
+
+export const createEnrollment = (
+  id: EnrollmentId,
+  userId: UserId,
+  challengeId: ChallengeId
+): Enrollment => ({
+  id,
+  userId,
+  challengeId,
+});

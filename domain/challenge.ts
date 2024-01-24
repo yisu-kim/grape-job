@@ -1,14 +1,37 @@
-import Achievement from "./achievement";
-import { ISO8601String } from "@/utils/date";
+import { Achievement } from "./achievement";
 
 export type ChallengeId = string;
 
-interface Challenge {
+export type Challenge = {
   id: ChallengeId;
-  createdAt: ISO8601String;
+  createdAt: ISOString;
   name: string;
   goalCount: number;
   achievements: Achievement[];
-}
+};
 
-export default Challenge;
+export const createChallenge = (
+  id: ChallengeId,
+  createdAt: ISOString,
+  name: string,
+  goalCount: number
+): Challenge => ({
+  id,
+  createdAt,
+  name,
+  goalCount,
+  achievements: [],
+});
+
+export const updateChallengeName = (challenge: Challenge, name: string) => ({
+  ...challenge,
+  name,
+});
+
+export const addAchievement = (
+  challenge: Challenge,
+  achievement: Achievement
+): Challenge => ({
+  ...challenge,
+  achievements: [...challenge.achievements, achievement],
+});

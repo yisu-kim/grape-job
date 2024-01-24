@@ -1,11 +1,17 @@
-import { ISO8601String } from "@/utils/date";
-
 type AchievementId = string;
 
-interface Achievement {
+export type Achievement = {
   id: AchievementId;
-  createdAt: ISO8601String;
+  createdAt: ISOString;
   background: Background;
-}
+};
 
-export default Achievement;
+export const createAchievement = (
+  id: AchievementId,
+  createdAt: ISOString,
+  background: Background
+): Achievement => ({
+  id,
+  createdAt,
+  background,
+});
