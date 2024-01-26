@@ -35,3 +35,9 @@ export const addAchievement = (
   ...challenge,
   achievements: [...challenge.achievements, achievement],
 });
+
+export const isAchievementCountUnderGoalCount = (
+  challenge: Challenge
+): boolean => {
+  return challenge.achievements.length < challenge.goalCount;
+};
