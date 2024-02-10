@@ -1,13 +1,13 @@
-import { ChallengeId } from "./challenge";
-import { UserId } from "./user";
+import { ChallengeId } from './challenge'
+import { UserId } from './user'
 
-export type EnrollmentId = string;
+export type EnrollmentId = string
 
 export type Enrollment = {
-  id: EnrollmentId;
-  userId: UserId;
-  challengeId: ChallengeId;
-};
+  id: EnrollmentId
+  userId: UserId
+  challengeId: ChallengeId
+}
 
 export const createEnrollment = (
   id: EnrollmentId,
@@ -17,4 +17,4 @@ export const createEnrollment = (
   id,
   userId,
   challengeId,
-});
+})

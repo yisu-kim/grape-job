@@ -1,10 +1,10 @@
-type AchievementId = string;
+type AchievementId = string
 
 export type Achievement = {
-  id: AchievementId;
-  createdAt: ISOString;
-  background: Background;
-};
+  id: AchievementId
+  createdAt: ISOString
+  background: Background
+}
 
 export const createAchievement = (
   id: AchievementId,
@@ -14,4 +14,4 @@ export const createAchievement = (
   id,
   createdAt,
   background,
-});
+})
